@@ -1,0 +1,73 @@
+/* General */
+
+body {
+    font: Helvetica;
+    padding: 0px; 
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    background-size: 100%;
+    background-image: url("../images/Background_imageOne.jpg");
+    
+
+}
+
+
+/* Header */
+
+header {
+    z-index: 99; 
+    position: fixed;
+    margin: 0 0 30px;
+    width: 100%;
+     background-image: url("../images/Header_Image.jpg");
+}
+
+h1 {
+    font-family: 'Paytone One', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    line-height: 60px;
+
+}
+
+
+
+/* instructions */
+
+.ojo {
+    clear: both;
+    padding: 10px 0px 60px 0px;
+    margin: 120px auto;
+    flex: 1;
+    background: azure;
+
+
+
+}
+
+h2 {
+    font-size: 38px;
+    text-align: center;
+    font-weight: strong; 
+
+}
+
+p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #1e0202;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+
+}
+
+/* game section*/
+
+
+
+/*Crystals */
+#crystals {
+    float: left;
+}

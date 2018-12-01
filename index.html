@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
-    <script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js“></script>
-    <script src="assets/javascript/game.js"></script>
+   
+    
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
     </header>
    
 
-    <div id="instructions" class="ojo">
+     <div id="instructions" class="ojo">
        <h2>Instructions:</h2>
        <p>You have a rare chance to steal my moolah, gems, crystals.</p>
        <p>It's quite simple</p>
@@ -29,23 +29,32 @@
        <p>I hope you're good at math </p>
      </div>
 
-     <div id="target-score"></div>
+    
 
-     <div id="users-score"></div>
+   
      
-     <div id="crystals">
+     <div id="rowOne">
+     
+        <div id="target-score"></div>
+         
+        <div id="crystals">
         <img id="redGem" src="assets/images/RedGem.png" width="100px" height="75px">
         <img id="blueGem" src="assets/images/BlueGem.png" width="100px" height="75px">
         <img id="purpleGem" src="assets/images/PurpleGem.png" width="100px" height="75px">
         <img id="yellowGem" src="assets/images/YellowGem.png" width="100px" height="75px">
 
 
+     
+        </div>
      </div>
 
-     <div id="win-lose">
-     <div id="wins"></div>
-     <div id="losses"></div>
-     </div> 
+    <div class="rowTwo">
+        <div id="users-score"></div>
+        <div id="win-lose">
+        <div id="wins"></div>
+        <div id="losses"></div>
+    </div> 
+    
   
   
 
@@ -59,6 +68,7 @@
    
    
     
-
+<script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js“></script>
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>

@@ -21,31 +21,62 @@ function randomCrystalVal() {
    return {
        red: {
         points: Math.floor(Math.random() * 12) +1,
-        imageUrl: "../images/RedGem.png"
+        // imageUrl: "../images/RedGem.png"
        },
        blue: {
         points: Math.floor(Math.random() * 12) +1,
-        imageUrl: "../images/BlueGem.png"
+        // imageUrl: "../images/BlueGem.png"
        },
        purple: {
         points: Math.floor(Math.random() * 12) +1,
-        imageUrl: "../images/PurpleGem.png"
+        // imageUrl: "../images/PurpleGem.png"
        },
-       yellow: {
+       yellow: { 
         points: Math.floor(Math.random() * 12) +1,
-        imageUrl: "../images/YellowGem.png"
+        // imageUrl: "../images/YellowGem.png"
        }
 
    };
 
 }
 
+
+
 // creatin the random number generator for values betwwen 19 -120
 function randomNumGen() {
-    return Math.floor(Math.random() * 120) + 19;
+    return Math.floor(Math.random() * 102) + 19;
 }
 
 //function that resets game
+
+function resetGame() {
+    userScore = 0;
+    gems = randomCrystalVal;
+    randomNum = randomNumGen;
+    $("#target-score").text(randomNum);
+}
+
+
+function updatePage(didPlayerWin) {
+    $("#wins").empty();
+
+    if (didPlayerWin === true) {
+       wins++;
+        $("#wins").htm('<p> Wins: </p>' + wins);
+        alert("You Won Yo! You may be the next Einstein!");
+        resetGame();
+        showTargetScore();
+    }
+    else if (didPlayerWi === false) {
+        losses++;
+        $("#losses").htm('<p> Losses: </p>' + losses);
+        alert("Yeah thats a hard no! Try Again!");
+        resetGame();
+        showTargetScore();
+    } 
+}
+
+
 
 
 

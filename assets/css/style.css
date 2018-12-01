@@ -65,9 +65,29 @@ p {
 
 /* game section*/
 
+/* target score*/
 
+#target-score {
+    background-color: antiquewhite;
+}
 
 /*Crystals */
 #crystals {
     float: left;
 }
+
+
+#users-score {
+    background-color: white;
+
+}
+
+#wins {
+    background-color: white;
+}
+
+#losses {
+    background-color: white;
+}
+
+

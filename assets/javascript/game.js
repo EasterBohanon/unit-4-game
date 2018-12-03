@@ -17,35 +17,19 @@ var losses = 0;
 var gems;
 
 
+
 function randomCrystalVal() {
-   return {
-       red: {
+    return {
         points: Math.floor(Math.random() * 12) +1,
-        // imageUrl: "../images/RedGem.png"
-       },
-       blue: {
-        points: Math.floor(Math.random() * 12) +1,
-        // imageUrl: "../images/BlueGem.png"
-       },
-       purple: {
-        points: Math.floor(Math.random() * 12) +1,
-        // imageUrl: "../images/PurpleGem.png"
-       },
-       yellow: { 
-        points: Math.floor(Math.random() * 12) +1,
-        // imageUrl: "../images/YellowGem.png"
-       }
-
-   };
-
+    };
 }
-
-
 
 // creatin the random number generator for values betwwen 19 -120
 function randomNumGen() {
     return Math.floor(Math.random() * 102) + 19;
 }
+
+
 
 //function that resets game
 
@@ -62,14 +46,14 @@ function updatePage(didPlayerWin) {
 
     if (didPlayerWin === true) {
       
-        $("#wins").htm('<p> Wins: </p>' + wins);
+        $("#wins").html('<p> Wins: </p>' + wins);
         alert("You Won Yo! You may be the next Einstein!");
         resetGame();
         showTargetScore();
     }
-    else if (didPlayerWi === false) {
+    else if (didPlayerWin === false) {
        
-        $("#losses").htm('<p> Losses: </p>' + losses);
+        $("#losses").html('<p> Losses: </p>' + losses);
         alert("Yeah thats a hard no! Try Again!");
         resetGame();
         showTargetScore();
@@ -78,7 +62,7 @@ function updatePage(didPlayerWin) {
 
 // Hopefully will show the total number the user is clicking
 function updateUserScore(gems) {
-userScore += gems[gems.attr("users-score")].points;
+userScore += gems[gems.attr("users-score")].randomCrystalVal;
 }
 
 // will hopefully show the User's guess
@@ -97,19 +81,22 @@ pleaseShowUserGuess();
 
 
 //hopefully this will create an onclick event for the pictures
-$(".gems").on("click", function(event) {
+$(".gems").on("click", function() {
+    randomCrystalVal();
+    userScoreNum = userScore + randomCrystalVal;
+    $("#users-score").text(userScore);
     updateUserScore($(this));
     pleaseShowUserGuess();
 
 
-    if (userScore === randomNum) {
+    if (userScoreNum === randomNum) {
         wins++;
         resetGame();
         updatePage(true);
 
     }
 
-    else if (userScore > randomNum) {
+    else if (userScoreNum > randomNum) {
         losses++;
         resetGame();
         updatePage(false);

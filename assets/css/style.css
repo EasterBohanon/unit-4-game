@@ -6,8 +6,9 @@ body {
     margin: 0px;
     display: flex;
     flex-direction: column;
-    background-size: 100%;
-    background-image: url("../images/Background_imageOne.jpg");
+    background-size: 75%;
+     /* background-image: url("../images/Header_Image.jpg"); */
+    /* background-image: url("../images/Background_imageOne.jpg"); */
     
 
 }
@@ -16,10 +17,7 @@ body {
 /* Header */
 
 #header {
-    z-index: 99; 
-    position: fixed;
-    margin: 0 0 30px;
-    width: 100%;
+  
      background-image: url("../images/Header_Image.jpg");
 }
 

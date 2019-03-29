@@ -1,148 +1,73 @@
-$(document).ready(function() {
-
-//Set variables for the game functions
-// set variables for the target score, users score, wins and losses
-
-
-
-//Number that will populate when crystals are clicked
+var blue = Math.floor(Math.random() * 12) + 1;
+var purple = Math.floor(Math.random() * 12) + 1;
+var red = Math.floor(Math.random() * 12) + 1;
+var yellow = Math.floor(Math.random() * 12) + 1;
+// this is the number that we will be trying to reach
+var randomNum = Math.floor(Math.random() * 200) + 50;
 var userScore = 0;
 
-var randomNum = randomNumGen();
-
-var wins = 0; 
-
+var wins = 0;
 var losses = 0;
 
-var gems;
 
+var targetScoreText = $("#target-score");
+var userScoreText = $("#user-score");
+var winsText = $("#wins");
+var lossText = $("#losses");
 
-
-function randomCrystalVal() {
-    return {
-        points: Math.floor(Math.random() * 12) +1,
-    };
-}
-
-// creatin the random number generator for values betwwen 19 -120
-function randomNumGen() {
-    return Math.floor(Math.random() * 102) + 19;
-}
-
-
-
-//function that resets game
-
-function resetGame() {
+function play() {
+    targetScoreText.text(randomNum);
+    blue = Math.floor(Math.random() * 12) + 1;
+    purple = Math.floor(Math.random() * 12) + 1;
+    red = Math.floor(Math.random() * 12) + 1;
+    yellow = Math.floor(Math.random() * 12) + 1;
+    randomNum = Math.floor(Math.random() * 200) + 50;
     userScore = 0;
-    gems = randomCrystalVal;
-    randomNum = randomNumGen;
-    $("#target-score").text(randomNum);
+    userScoreText.html(userScore);
+    targetScoreText.html(randomNum);
+    console.log(randomNum);
+
 }
+$(document).ready(function(){
+    targetScoreText.html(randomNum);
+    
+    $("#red").click(function (event) {
+        userScore = userScore + red;
+        userScoreText.html(userScore);
+        game();
+        console.log(red, "red guess")
+    });
+    $("#blue").click(function (event) {
+        userScore = userScore + blue;
+        userScoreText.html(userScore);
+        game();
+        console.log(blue, "blue guess")
+    });
+    $("#purple").click(function (event) {
+        userScore = userScore + purple;
+        userScoreText.html(userScore);
+        game();
+        console.log(purple, "purple guess")
+    });
+    $("#yellow").click(function (event) {
+        userScore = userScore + yellow;
+        userScoreText.html(userScore);
+        game();
+        console.log(yellow, "yellow guess")
+    });
 
-
-function updatePage(didPlayerWin) {
-    $("#wins").empty();
-
-    if (didPlayerWin === true) {
-      
-        $("#wins").html('<p> Wins: </p>' + wins);
-        alert("You Won Yo! You may be the next Einstein!");
-        resetGame();
-        showTargetScore();
-    }
-    else if (didPlayerWin === false) {
+    function game() {
+        if (userScore === randomNum) {
+            alert("Alrighty there Einstein");
+            $("#wins").text(wins +=1 );
+            play();
+        } else if(userScore > randomNum) {
+            alert("Maybe you should revisit grade school");
+            $("#losses").text(losses +=1 );
+            play();
+        }
        
-        $("#losses").html('<p> Losses: </p>' + losses);
-        alert("Yeah thats a hard no! Try Again!");
-        resetGame();
-        showTargetScore();
-    } 
-}
-
-// Hopefully will show the total number the user is clicking
-function updateUserScore(gems) {
-userScore += gems[gems.attr("users-score")].randomCrystalVal;
-}
-
-// will hopefully show the User's guess
-
-function pleaseShowUserGuess() {
-    var userScoreNum = $("#users-score").text(userScore);
-    $("#users-score").html();
-    $("#users-score").html(userScoreNum);
-
-}
-
-resetGame();
-updatePage();
-pleaseShowUserGuess();
-
-
-
-//hopefully this will create an onclick event for the pictures
-$(".gems").on("click", function() {
-    randomCrystalVal();
-    userScoreNum = userScore + randomCrystalVal;
-    $("#users-score").text(userScore);
-    updateUserScore($(this));
-    pleaseShowUserGuess();
-
-
-    if (userScoreNum === randomNum) {
-        wins++;
-        resetGame();
-        updatePage(true);
 
     }
-
-    else if (userScoreNum > randomNum) {
-        losses++;
-        resetGame();
-        updatePage(false);
-
-    }
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });

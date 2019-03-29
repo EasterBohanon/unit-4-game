@@ -1,75 +1,101 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Crystal Maze</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
-   
-    
+
+    <title>Crystal Game</title>
 </head>
+
 <body>
-    <header>
-        <h1>The Crystal Collector Game</h1>
-    </header>
-   
-
-     <div id="instructions" class="ojo">
-       <h2>Instructions:</h2>
-       <p>You have a rare chance to steal my moolah, gems, crystals.</p>
-       <p>It's quite simple</p>
-       <p>There are four crystals below, each one has a different value.</p>
-       <p>Click on them to figure out that value</p>
-       <p><strong>PLOT TWIST</strong></p>
-       <p>You have to match the value I give you by matching your total score to that value</p>
-       <p>If you lose the values change and so do the values of each crystal</p>
-       <p>I hope you're good at math </p>
-     </div>
-
-    
-
-   
-     
-     <div id="rowOne">
-     
-        <div id="target-score">
-            <h2>Target Score:</h2>
+    <div class="jumbotron" id="header">
+        <h1>Crystal Game</h1>
+        <div class="space" id="instructions">
+            <h2>Instructions:</h2>
+            <p>You have a rare chance to steal my moolah, gems, crystals.It's quite simple</p>
+            <p>There are four crystals below, each one has a different value. Click on them to figure out that value</p>
+            <p><strong>PLOT TWIST</strong></p>
+            <p>You have to match the value I give you by matching your total score to that value
+                If you lose the values change and so do the values of each crystal, I hope you're good at math </p>
         </div>
-         
-        <div id="crystals" class="gems">
-        <img id="redGem" class="gems" src="assets/images/RedGem.png" width="100px" height="75px">
-        <img id="blueGem" class="gems"  src="assets/images/BlueGem.png" width="100px" height="75px">
-        <img id="purpleGem"  class="gems" src="assets/images/PurpleGem.png" width="100px" height="75px">
-        <img id="yellowGem" class="gems"  src="assets/images/YellowGem.png" width="100px" height="75px">
-
-
-     
+        <div class="container">
+            <div class="card">
+               <div class="card-body">
+                    <h2>Target Score: <span id="target-score"></span></h2>
+               </div>
+            </div>
         </div>
-     </div>
+    </div>
 
-    <div class="rowTwo">
-        <div id="users-score"></div>
-        <div id="wins"></div>
-        <div id="losses"></div>
-    </div> 
-    
-  
-  
+    <div class="container">
+
+        <div class="row" id="rowOne">
+            <div class="col-3">
+                <div class="card" id="gems">
+                    <div class="card-body" id="red">
+                        <img id="redGem" class="gems" src="assets/images/RedGem.png" width="100px" height="75px">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card" id="gems">
+                    <div class="card-body" id="blue"> <img id="blueGem" class="gems" src="assets/images/BlueGem.png"
+                            width="100px" height="75px">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card" id="gems">
+                    <div class="card-body" id="purple"> <img id="purpleGem" class="gems" src="assets/images/PurpleGem.png" width="100px" height="75px"></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card" id="gems">
+                    <div class="card-body" id="yellow"><img id="yellowGem" class="gems" src="assets/images/YellowGem.png" width="100px" height="75px"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row" id="rowTwo">
+            <div class="col-4">
+                <div class="card bg-info text-white">
+                    <div class="card-body">Current Score:<span id="user-score"></span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-info text-white">
+                    <div class="card-body">Wins:<span id="wins"></span></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-info text-white">
+                    <div class="card-body">Losses: <span id="losses"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-
-
-
-
-
-   
-   
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>   
-<!-- <script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js“></script> -->
-<script src="assets/javascript/game.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

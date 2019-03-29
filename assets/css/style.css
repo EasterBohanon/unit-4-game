@@ -15,7 +15,7 @@ body {
 
 /* Header */
 
-header {
+#header {
     z-index: 99; 
     position: fixed;
     margin: 0 0 30px;
@@ -36,7 +36,7 @@ h1 {
 
 /* instructions */
 
-.ojo {
+#instructions {
     clear: both;
     padding: 10px 0px 60px 0px;
     margin: 120px auto;
